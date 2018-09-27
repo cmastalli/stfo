@@ -1,0 +1,49 @@
+cmaes:
+  # Type of families
+  #   0 -> IPOP
+  #   1 -> BIPOP
+  #   2 -> ACMAES
+  #   3 -> AIPOP
+  #   4 -> ABIPOP
+  #   5 -> SEPCMAES
+  #   6 -> SEPIPOP
+  #   7 -> SEPBIPOP
+  #   8 -> SEPACMAES
+  #   9 -> SEPAIPOP
+  #  10 -> SEPABIPOP
+  #  11 -> VDCMA
+  #  12 -> VDIPOPCMA
+  #  13 -> VDBIPOPCMA
+  family: 0
+  # initial step-size, i.e. estimated initial parameter error
+  # (-1 for automatically decided sigma)
+  sigma: 0.85 #-1 #0.005
+  # Number of offsprings at each generation
+  #   -1 -> for automatically decided lambda
+  #    0 -> is for random seeding of the internal generator
+  lambda: 1850
+  # Threshold function convergence
+  ftolerance: 1e-12
+  # Allowed number of iteration (-1 for unlimited)
+  max_iter: -1
+  # Allowed number of function evaluations (-1 for unlimited) 
+  max_fevals: -1
+  # Type of elitism
+  #   0 -> no elitism
+  #   1 -> elitism: reinjects the best-ever seen solution
+  #   2 -> initial elitism: reinject x0 as long as it is not improved upon
+  #   3 -> initial elitism on restart: restart if best encountered solution is not the
+  #        the final solution and reinjects the best solution until the population
+  #        has better fitness, in its majority
+  elitism: 0
+  # Maximum number of restarts applies to IPOP and BIPOP
+  max_restarts: 10
+  # Enable of disable the gradient injection
+  with_gradient: false
+  # Enable or disable the multi-threading optimization
+  multithreads: false
+  # Generates an output file if the name is defined
+  output_file:
+    activate: false
+    filename: out.dat
+    print: false
